@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class App extends Component {
   render() {
     return (
-      <div>Hey world</div>
+      <div>Hello world</div>
     )
   }
 }
