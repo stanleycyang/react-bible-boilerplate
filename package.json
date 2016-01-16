@@ -36,7 +36,12 @@
     "webpack-hot-middleware": "^2.6.0"
   },
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
+    "lint": "eslint client",
+    "clean": "rimraf static/dist",
+    "build:webpack": "cross-env NODE_ENV=production webpack --config webpack/prod.config.js",
+    "build": "npm run clean && npm run build:webpack"
   },
   "keywords": [],
   "author": "Stanley C Yang <stanley@stanleycyang.com> (http://www.stanleycyang.com)",
