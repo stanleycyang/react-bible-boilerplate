@@ -3,6 +3,7 @@
 import express from 'express'
 import config from '../config'
 import path from 'path'
+import home from './routes'
 
 const app = express()
 
@@ -32,6 +33,9 @@ app.use(require('morgan')('dev'))
 // Use Jade
 app.set('views', path.join(__dirname, '../client/views'))
 app.set('view engine', 'jade')
+
+// Set up route
+app.use('/', home)
 
 // Export App
 module.exports = app
