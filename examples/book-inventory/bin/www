@@ -1,0 +1,17 @@
+#! /usr/bin/env node
+
+'use strict'
+
+require('babel-core/register')
+
+const http = require('http')
+const app = require('../server')
+const config = require('../config')
+const pkg = require('../package.json')
+
+const port = config.PORT
+app.set('port', port)
+
+const server = http.createServer(app)
+
+server.listen(port)
