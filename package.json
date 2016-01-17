@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "es6-object-assign": "^1.0.1",
     "express": "^4.13.3",
     "jade": "^1.11.0",
     "morgan": "^1.6.1",
     "react": "^0.14.6",
-    "react-dom": "^0.14.6"
+    "react-dom": "^0.14.6",
+    "whatwg-fetch": "^0.10.1"
   },
   "devDependencies": {
     "babel-core": "^6.4.0",
