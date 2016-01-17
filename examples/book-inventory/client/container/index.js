@@ -47,9 +47,9 @@ window.books = [
 export default class BookInventory extends Component {
   render() {
     return (
-      <div>
-        <BookBox books={ books } />
-      </div>
+      <main>
+        <BookBox initialBooks={ books } />
+      </main>
     )
   }
 }

@@ -23,7 +23,7 @@ export default class BookForm extends Component {
   handleISBNChange = (e) => {
     // Set the new ISBN
     this.setState({
-      isbn: e.target.value
+      isbn: e.target.value.trim()
     })
   };
 
@@ -31,7 +31,7 @@ export default class BookForm extends Component {
   handleAuthorChange = (e) => {
     // Sets the new author
     this.setState({
-      author: e.target.value
+      author: e.target.value.trim()
     })
   };
 
@@ -39,22 +39,25 @@ export default class BookForm extends Component {
   handleTitleChange = (e) => {
     // Sets the new title
     this.setState({
-      title: e.target.value
+      title: e.target.value.trim()
     })
   };
 
-  addBook = (e) => {
+  handleSubmit = (e) => {
+    const { addBook } = this.props
+    const { isbn, author, title } = this.state
     e.preventDefault()
-    e.stopPropagation()
 
+    if (!isbn || !author || !title) return
+
+    addBook(this.state)
   };
 
   render() {
-    const { addBook } = this.props
     return (
-      <form className="bookForm" onSubmit={ this.addBook }>
+      <form className="bookForm" onSubmit={ this.handleSubmit }>
         {/* ISBN */}
-        <input type="text" placeholder="ISBN" onChange={ this.handleAuthorChange } ref="isbn" />
+        <input type="text" placeholder="ISBN" onChange={ this.handleISBNChange } ref="isbn" />
 
         {/* Author name */}
         <input type="text" placeholder="Author name" onChange={ this.handleAuthorChange } />
