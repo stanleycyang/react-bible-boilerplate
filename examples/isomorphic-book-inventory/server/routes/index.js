@@ -10,7 +10,7 @@ const component = createFactory(App)
 router.get('/', (req, res, next) => {
   res.render('index', {
     title: 'Book Inventory',
-    component: renderToString(component())
+    component: renderToString(component({}))
   })
 })
 
