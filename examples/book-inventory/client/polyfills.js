@@ -1,5 +1,3 @@
-'use strict'
-
 /*
  * Load any necessary polyfills here
  */

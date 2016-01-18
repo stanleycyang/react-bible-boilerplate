@@ -24,6 +24,7 @@ export default class BookBox extends Component {
   constructor(props) {
     super(props)
 
+    // Set the initialBooks prop into the state 'books'
     this.state = {
       books: this.props.initialBooks
     }
@@ -31,7 +32,8 @@ export default class BookBox extends Component {
 
   // Add book
   addBook = (book) => {
-    let books = this.state.books.concat([book])
+    let books = this.state.books
+    books.unshift(book)
     this.setState({
       books
     })
@@ -49,10 +51,12 @@ export default class BookBox extends Component {
   render() {
     const { books } = this.state
     return (
-      <div>
-        <h1>Book Inventory</h1>
+      <div className="ui container">
+        <h1 className="title ui center aligned dividing header">Book Inventory</h1>
         <BookForm addBook={ this.addBook } />
-        <BookList books={ books } removeBook={ this.removeBook } />
+        <div className="ui items">
+          <BookList books={ books } removeBook={ this.removeBook } />
+        </div>
       </div>
     )
   }

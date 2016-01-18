@@ -50,23 +50,49 @@ export default class BookForm extends Component {
 
     if (!isbn || !author || !title) return
 
-    addBook(this.state)
+    addBook({
+      isbn,
+      author,
+      title
+    })
+
+    this.setState({
+      isbn: '',
+      author: '',
+      title: ''
+    })
+
   };
 
   render() {
     return (
-      <form className="bookForm" onSubmit={ this.handleSubmit }>
-        {/* ISBN */}
-        <input type="text" placeholder="ISBN" onChange={ this.handleISBNChange } ref="isbn" />
+      <form className="bookForm ui form" onSubmit={ this.handleSubmit }>
 
-        {/* Author name */}
-        <input type="text" placeholder="Author name" onChange={ this.handleAuthorChange } />
+        <div className="three fields">
+          {/* ISBN */}
+          <div className="field">
+            <label>ISBN</label>
+            <input type="text" placeholder="ISBN" onChange={ this.handleISBNChange } ref="isbn" value={ this.state.isbn } />
+          </div>
 
-        {/* Book title */}
-        <input type="text" placeholder="Book title" onChange={ this.handleTitleChange } />
+          {/* Author name */}
+          <div className="field">
+            <label>Author</label>
+            <input type="text" placeholder="Author name" onChange={ this.handleAuthorChange } value={ this.state.author } />
+          </div>
+
+          {/* Book title */}
+          <div className="field">
+            <label>Title</label>
+            <input type="text" placeholder="Book title" onChange={ this.handleTitleChange } value={ this.state.title } />
+          </div>
+        </div>
 
         {/* Submit button */}
-        <button type="submit">Add new book</button>
+        <button className="fluid ui button green right labeled icon" type="submit">
+          <i className="right arrow circle outline icon"></i>
+          Add new book
+        </button>
 
       </form>
     )

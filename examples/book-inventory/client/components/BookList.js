@@ -17,9 +17,13 @@ export default class BookList extends Component {
     // Create a new array with map and store it within bookNodes
     let bookNodes = this.props.books.map((book, i) => {
       return (
-        <div key={ book.isbn }>
+        <div key={ book.isbn } className="ui segment">
           <Book author={ book.author } title={ book.title } />
-          <button onClick={ removeBook.bind(null, i) }>Delete</button>
+          <br />
+          <button className="ui red right labeled icon button" onClick={ removeBook.bind(null, i) }>
+            <i className="trash icon"></i>
+            Delete
+          </button>
         </div>
       )
     })
