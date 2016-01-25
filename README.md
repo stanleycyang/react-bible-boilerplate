@@ -143,7 +143,7 @@ I recommend you **star**, **fork**, or **clone** this repo for your own referenc
 **Installation:**
 
 ```bash
-$ git clone git@github.com:stanleycyang/react-bible-boilerplate.git book-inventory
+$ git clone https://github.com/stanleycyang/react-bible-boilerplate.git book-inventory
 $ cd book-inventory
 $ npm install
 ```
