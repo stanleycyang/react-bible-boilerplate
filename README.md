@@ -715,10 +715,6 @@ export default class Book extends Component {
     title: PropTypes.string.isRequired
   };
 
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const { author, title } = this.props
     return (
@@ -746,6 +742,8 @@ The BookList should render the array of books. We will need to make use of the J
 In your `client/components/BookList.js`:
 
 ```js
+'use strict'
+
 import React, { Component, PropTypes } from 'react'
 import Book from './Book'
 
@@ -754,10 +752,6 @@ export default class BookList extends Component {
     books: PropTypes.array.isRequired,
     removeBook: PropTypes.func.isRequired
   };
-
-  constructor(props) {
-    super(props)
-  }
 
   render() {
     const { removeBook } = this.props
