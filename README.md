@@ -715,10 +715,6 @@ export default class Book extends Component {
     title: PropTypes.string.isRequired
   };
 
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const { author, title } = this.props
     return (
@@ -756,10 +752,6 @@ export default class BookList extends Component {
     books: PropTypes.array.isRequired,
     removeBook: PropTypes.func.isRequired
   };
-
-  constructor(props) {
-    super(props)
-  }
 
   render() {
     const { removeBook } = this.props
