@@ -746,6 +746,8 @@ The BookList should render the array of books. We will need to make use of the J
 In your `client/components/BookList.js`:
 
 ```js
+'use strict'
+
 import React, { Component, PropTypes } from 'react'
 import Book from './Book'
 
